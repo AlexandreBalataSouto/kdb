@@ -97,7 +97,7 @@
 </div>
 
 <script>
-    $(document).ready( function () {
+    document.addEventListener('DOMContentLoaded', function() {
         let table = $('#tablaDataTable').DataTable({
             responsive: true,
             pageLength: 5,

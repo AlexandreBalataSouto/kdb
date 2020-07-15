@@ -49,14 +49,6 @@ class KaratecaController extends Controller
         }
         return redirect('karatecas')->with($notification);
     }
-    /*
-    public function show($id_karateca)
-    {
-        $karateca=Karateca::find($id_karateca); 
-        return view('karatecas.show',compact('karateca'));
-    }
-    */
-
     public function show($id_karateca)
     {
         $karateca=Karateca::find($id_karateca);
@@ -64,16 +56,6 @@ class KaratecaController extends Controller
         $categorias=Categoria::all(); 
         return view('karatecas.ficha',compact('karateca','categorias','municipios'));
     }
-
-    /*
-    public function edit($id_karateca)
-    {
-        $karateca=Karateca::find($id_karateca);
-        $municipios=["Tias","Tinajo","San Bartolome","Yaiza","Haria","Arrecife","Teguise"];
-        $categorias=Categoria::all();
-        return view('karatecas.edit',compact('karateca','categorias','municipios'));
-    }
-    */
     
     public function update(ValidarKaratecaRequest $request, $id_karateca)
     {

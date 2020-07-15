@@ -36,8 +36,10 @@
                         @foreach ($monitores as $monitor)
                         <tr data-monitor={{$monitor->id_monitor}}>
                             @if($monitor->fotosMonitor()->first()!=null)
-                            <td><img src="{{Storage::url($monitor->fotosMonitor()->orderBy('id_foto_monitor','DESC')->first()->path)}}"
-                                    class="responsive-img"></td>
+                            <td>
+                                <img src="{{Storage::url($monitor->fotosMonitor()->orderBy('id_foto_monitor','DESC')->first()->path)}}"
+                                    class="responsive-img">
+                            </td>
                             @else
                             <td><img src="{{URL::asset('img/fotoDefault.jpg')}}" class="responsive-img"></td>
                             @endif
@@ -72,7 +74,7 @@
 </div>
 
 <script>
-    $(document).ready( function () {
+    document.addEventListener('DOMContentLoaded', function() {
         $('#tablaDataTable').DataTable({
             responsive: true,
             pageLength: 5,

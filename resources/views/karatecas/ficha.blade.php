@@ -294,7 +294,7 @@
 </script>
 @endif
 <script>
-    $(document).ready(function(){
+    document.addEventListener('DOMContentLoaded', function() {
         $(".browser-default").change(function(){
             $(this).css("border-bottom", "2px solid #4CAF50");
         });
@@ -327,9 +327,6 @@
             }
            M.updateTextFields();
         });
-
-
-
     });
 
 </script>

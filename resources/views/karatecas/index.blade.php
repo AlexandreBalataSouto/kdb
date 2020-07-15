@@ -71,7 +71,7 @@
 </div>
 
 <script>
-    $(document).ready( function () {
+    document.addEventListener('DOMContentLoaded', function() {
         $('#tablaDataTable').DataTable({
             responsive: true,
             pageLength: 5,
@@ -135,7 +135,7 @@
                 toastr.error('ERROR');
             });
         });
-    });
+});
 </script>
 
 @endsection

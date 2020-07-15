@@ -1,7 +1,6 @@
 @extends('layouts/template')
 @section('contenido')
 
-
 <div class="card">
     <div class="row card-content">
         <div class="row">
@@ -57,7 +56,7 @@
     </div>
 </div>
 <script>
-    $(document).ready( function () {
+    document.addEventListener('DOMContentLoaded', function() {
         $('#tablaDataTable').DataTable({
             responsive: true,
             pageLength: 5,

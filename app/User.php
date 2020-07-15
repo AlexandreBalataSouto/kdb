@@ -45,21 +45,20 @@ class User extends Authenticatable
         }else if(count($array) >= 4){
             return $array[0]." ".$array[1];
         }
-
-        return $name;
     }
 
     public function getApellidosSoloAttribute(){
         $array = explode(" ",$this->name);
 
-        if(count($array) < 4){
+        if(count($array) == 2){
+            return $array[1];
+        }else if(count($array) == 3){
             return $array[1]." ".$array[2];
         }else if(count($array) >= 4){
             return $array[2]." ".$array[3];
+        }else{
+            return "";
         }
-
-        return $name;
     }
-
 }
 

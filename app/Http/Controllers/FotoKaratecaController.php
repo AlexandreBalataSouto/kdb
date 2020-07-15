@@ -47,20 +47,20 @@ class FotoKaratecaController extends Controller
     public function store(Request $request, $id_karateca)
     {
         $fotoKarateca = $request->file('file');
+
         FotoKarateca::create([
             'titulo' => $fotoKarateca->getClientOriginalName(),
             'path' => $fotoKarateca->store('public/storeFotosKarateca'),
             'karateca_id' => $id_karateca
         ]);
 
-        $path=$fotoKarateca->store('public/storeFotosKarateca');
-        $fileName = collect(explode('/', $path))->last();
-        $image = Image::make(Storage::get($path));
-        
-        $image->resize(2047, 1365, function ($constraint) {
-        $constraint->aspectRatio();
-        $constraint->upsize();
+        $image = Image::make($fotoKarateca->getRealPath());
+        $image ->resize(800, null, function($constraint){//650x756
+            $constraint->aspectRatio();
         });
+        $image->orientate();
+
+        $path=$fotoKarateca->store('public/storeFotosKarateca');
 
         Storage::put($path, (string) $image->encode('jpg', 30));
     }

@@ -64,12 +64,12 @@
                 </div>
                 <div class="row">
                     <div class="input-field col s12 m6 l6">
-                        <input type="date" id="start" name="start">
+                        <input type="date" id="start" name="start" min="{{date('Y-m-d')}}">
                         <label for="start"><span class="requiredInput">*</span>Fecha inicio</label>
                         <strong class="errorValidation" id="errorStart"></strong>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <input type="date" id="end" name="end">
+                        <input type="date" id="end" name="end" min="{{date('Y-m-d')}}">
                         <label for="end"><span class="requiredInput">*</span>Fecha fin</label>
                         <strong class="errorValidation" id="errorEnd"></strong>
                     </div>
@@ -122,7 +122,7 @@
         });
         
         let calendar = new FullCalendar.Calendar(calendarEl,{
-            plugins: ['dayGrid','interaction'],
+            plugins: [dayGridPlugin,interactionPlugin],
             height: 'auto',
             contentHeight:'auto',
             firstDay:1,
@@ -133,9 +133,10 @@
                 toastr.error('ERROR CALENDAR');
               },
             },
-            header:{
-              left:'title',
-              right:'prev,next today',
+            headerToolbar:{
+                start: 'title',
+                center: '',
+                end: 'today,prev,next'
             },
             buttonText:{
                 today: 'Hoy',

@@ -48,7 +48,7 @@
 
 
 <script>
-    $(document).ready(function(){
+    document.addEventListener('DOMContentLoaded', function() {
         $('#tablaDataTableParticipantes').DataTable({
             responsive: true,
             pageLength: 5,
@@ -78,5 +78,5 @@
 				}
 			},
         });
-    });
+     });
 </script>

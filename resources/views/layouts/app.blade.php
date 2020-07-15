@@ -14,58 +14,12 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!--MATERIALIZE CSS Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <!-- Compiled icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--END MATERIALIZE-->
 
 </head>
-<style>
-    #app {
-        width: 100%;
-    }
-
-    .card-action > .row > .col.s12.m12.l8 > button,a{
-        margin-top: 2%;
-    }
-
-    .boxGifLoading {
-        position: absolute;
-        top: 0%;
-        bottom: 0%;
-        right: 0%;
-        left: 0%;
-        z-index: 1;
-        display: none;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-    }
-
-    .input-field label {
-        /*Para los caracteres de los formularios sean negros*/
-        color: black;
-    }
-
-    strong {
-        color: red;
-    }
-
-    .btn.waves-effect.waves-light.red {
-        float: right;
-    }
-
-    .footerCopyright {
-        text-align: center;
-        left: 0%;
-        bottom: 0%;
-        width: 100%;
-    }
-</style>
-
 <body>
     <div id="app" class="container section">
         <div class="row" id="main">
@@ -91,8 +45,5 @@
             $(".boxGifLoading").css("display","flex");
         });
     });
-
-
 </script>
-
 </html>

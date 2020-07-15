@@ -47,21 +47,21 @@ class FotoMonitorController extends Controller
     public function store(Request $request, $id_monitor)
     {
         $fotoMonitor=$request->file('file');
+
         FotoMonitor::create([
             'titulo'=>$fotoMonitor->getClientOriginalName(),
             'path'=>$fotoMonitor->store('public/storeFotosMonitor'),
             'monitor_id'=>$id_monitor
         ]);
 
-        $path=$fotoMonitor->store('public/storeFotosMonitor');
-        $fileName = collect(explode('/', $path))->last();
-        $image = Image::make(Storage::get($path));
-        
-        $image->resize(2047, 1365, function ($constraint) {
-        $constraint->aspectRatio();
-        $constraint->upsize();
+        $image = Image::make($fotoMonitor->getRealPath());
+        $image ->resize(800, null, function($constraint){
+            $constraint->aspectRatio();
         });
+        $image->orientate();
 
+        $path=$fotoMonitor->store('public/storeFotosMonitor');
+       
         Storage::put($path, (string) $image->encode('jpg', 30));
 
     }

@@ -43,20 +43,20 @@ class DocumentoController extends Controller
     public function store(Request $request, $id_karateca)
     {
         $documento=$request->file('file');
+
         Documento::create([
             'titulo'=>$documento->getClientOriginalName(),
             'path'=>$documento->store('public/storeDocumentos'),
             'karateca_id'=>$id_karateca
-           ]);
+        ]);
+
+        $image = Image::make($documento->getRealPath());
+        $image ->resize(800, null, function($constraint){//650x756
+            $constraint->aspectRatio();
+        });
+        $image->orientate();
 
         $path=$documento->store('public/storeDocumentos');
-        $fileName = collect(explode('/', $path))->last();
-        $image = Image::make(Storage::get($path));
-        
-        $image->resize(2047, 1365, function ($constraint) {
-        $constraint->aspectRatio();
-        $constraint->upsize();
-        });
 
         Storage::put($path, (string) $image->encode('jpg', 30));
     }

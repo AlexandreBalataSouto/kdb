@@ -58,9 +58,8 @@
     </div>
 </div>
 
-
 <script>
-    $(document).ready(function(){
+    document.addEventListener('DOMContentLoaded', function() {
         $("#botonSubirArchivo").hide();
 
         $(document).on('click', '.pagination a', function(event){

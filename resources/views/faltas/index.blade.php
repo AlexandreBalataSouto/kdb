@@ -17,8 +17,9 @@
                 </a>
             </div>
             <div class="input-field col s7 m4 l3">
-                <input type="date" name="fechaFalta" class="fechaFalta" value="{{date('Y-m-d')}}" />
-                <label for="fechaFalta">Fecha de alta</label>
+                <input type="date" name="fechaFalta" class="fechaFalta" value="{{date('Y-m-d')}}"
+                    min="{{date('Y-m-d')}}" />
+                <label for="fechaFalta">Fecha de falta</label>
             </div>
 
             <div class="input-field col s12 m12 l12">
@@ -73,10 +74,9 @@
     </div>
 </div>
 
-
 <script>
-    $(document).ready( function () {
-
+    document.addEventListener('DOMContentLoaded', function() {
+        
        let table = $('#tablaDataTable').DataTable({
             responsive: true,
             pageLength: 5,
@@ -193,7 +193,6 @@
            var cells = table.cells().nodes();
            $(cells).find(".faltaAlumnos").prop("checked", false);
         }
-        
     });
 </script>
 @endsection

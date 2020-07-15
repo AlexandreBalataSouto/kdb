@@ -60,7 +60,7 @@
 @endif
 
 <script>
-    $(document).ready(function(){
+    document.addEventListener('DOMContentLoaded', function() {
         let tableCompetidores = $('#tablaDataTableCompetidores').DataTable({
             responsive: true,
             pageLength: 5,

@@ -1,0 +1,135 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Materialize
+@import "node_modules/materialize-css/sass/materialize.scss";
+
+// Datatable
+@import '~datatables.net-dt/css/jquery.dataTables.css';
+@import '~datatables.net-responsive-dt/css/responsive.dataTables.css';
+
+// Fullcalendar
+@import '~@fullcalendar/daygrid/main.css';
+
+// template.blade.php
+body,
+html {
+    width: 100%;
+}
+#calendar {
+    /*Asistencias / Eventos*/
+    width: 100%;
+}
+.menuBurger {
+    /*Oculto*/
+    display: none;
+    background-color: #26A69A;
+}
+.sidenav-trigger>i {
+    /*Color del icono menu*/
+    color: white;
+    margin-left: 4%;
+    font-size: 3rem;
+}
+.menu {
+    background-color: #26A69A;
+}
+.background {
+    /*Color de fondo del Menu*/
+    background: #26A69A;
+}
+.responsive-img {
+    /*Img de los listados y fichas*/
+    width: 7em;
+}
+.imagenPerfil {
+    /*Img del menu*/
+   // width: 2.8rem;
+    width: 64px;
+    height: 64px;
+}
+.card-image .documento {
+    /*Documentos*/
+    width: 100%;
+    height: 20em;
+}
+.card-image img {
+    /*Fotos */
+    width: 100%;
+    height: 32em;
+}
+.card-image {
+    /*grid de fotos y documentos*/
+    display: flex;
+    flex-wrap: wrap;
+}
+.borderGreyImg {
+    /*Border gris para las fotos y documentos*/
+    border: 3px solid #9e9e9e;
+}
+#firstImg {
+    /*Fotos karateca y monitores*/
+    border: 3px solid #26A69A;
+}
+.floatRight {
+    /*Botones a la derecha*/
+    float: right;
+}
+.floatLeft {
+    /*Botones a la izquierda*/
+    float: left;
+}
+.browser-default {
+    /*Color del select por defecto*/
+    border-bottom: 1px solid #9e9e9e;
+}
+th,
+td {
+    text-align: center;
+}
+.input-field label,
+input::placeholder,
+textarea::placeholder {
+    /*Para los caracteres de los formularios sean negros*/
+    color: black;
+}
+.requiredInput {
+    /*Colorea el asterisco de los campos obligatorios*/
+    color: red;
+}
+.errorValidation {
+    color: red;
+}
+.closeModal {
+    color: gray;
+}
+.boxGifLoading {
+    position: fixed;
+    top: 0%;
+    bottom: 0%;
+    right: 0%;
+    left: 0%;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.footerCopyright {
+    text-align: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+@media (max-width: 1295px) {
+    .menuBurger {
+        display: block;
+    }
+    .menu {
+        display: none;
+    }
+}

@@ -1,7 +1,6 @@
 @extends('layouts/template')
 @section('contenido')
 
-
 <div class="card">
     <div class="row card-content">
         <div class="row">
@@ -44,7 +43,8 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a href="#" class="waves-effect waves-light btn red" id="botonBorrarFalta"><i class="material-icons">delete</i></a>
+        <a href="#" class="waves-effect waves-light btn red" id="botonBorrarFalta"><i
+                class="material-icons">delete</i></a>
         <input type="hidden" class="inputFaltaId">
     </div>
 </div>
@@ -64,7 +64,7 @@
         });
 
         let calendar = new FullCalendar.Calendar(calendarEl, {
-            plugins: ['dayGrid','interaction'],
+            plugins: [dayGridPlugin,interactionPlugin],
             height: 'auto',
             contentHeight:'auto',
             firstDay:1,
@@ -78,9 +78,10 @@
                 toastr.error('ERROR CALENDAR');
               },
           },
-          header:{
-              left:'title',
-              right:'prev,next today',
+          headerToolbar:{
+            start: 'title',
+            center: '',
+            end: 'today,prev,next'
           },
           buttonText:{
             today: 'Hoy',
