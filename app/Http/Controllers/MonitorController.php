@@ -7,6 +7,8 @@ use App\User;
 use App\FotoMonitor;
 use Illuminate\Http\Request;
 use App\Http\Requests\ValidarMonitorRequest;
+use Illuminate\Support\Facades\Storage;
+use Image;
 
 class MonitorController extends Controller
 {
@@ -41,12 +43,23 @@ class MonitorController extends Controller
             'alert-type' => 'success'
         );
 
-        if($foto != null){
+        if($foto !== null){
             FotoMonitor::create([
                 'titulo'=>$foto->getClientOriginalName(),
                 'path'=>$foto->store('public/storeFotosMonitores'),
                 'monitor_id'=>$monitor->id_monitor
             ]);
+
+            $image = Image::make($foto->getRealPath());
+            $image ->resize(800, null, function($constraint){//650x756
+                $constraint->aspectRatio();
+            });
+            $image->orientate();
+
+            $path=$foto->store('public/storeFotosMonitores');
+
+            Storage::put($path, (string) $image->encode('jpg', 30));
+
             return redirect('monitores')->with($notification);
         }
         return redirect('monitores')->with($notification);
@@ -57,14 +70,6 @@ class MonitorController extends Controller
         $monitor=Monitor::find($id_monitor); 
         return view('monitores.ficha',compact('monitor'));
     }
-
-    /*
-    public function edit($id_monitor)
-    {
-        $monitor=Monitor::find($id_monitor);
-        return view('monitores.edit',compact('monitor'));
-    }
-    */
 
     public function update(ValidarMonitorRequest $request, $id_monitor)
     {

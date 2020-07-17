@@ -10066,6 +10066,10 @@ html {
   background: #26A69A;
 }
 
+#fotoDocuButtons > a {
+  margin-top: 5%;
+}
+
 .responsive-img {
   /*Img de los listados y fichas*/
   width: 7em;

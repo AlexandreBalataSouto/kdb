@@ -26,30 +26,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
     integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
 <!--END MOMENT JS-->
-
-<script>
-    @if(Session::has('message'))
-     var type = "{{ Session::get('alert-type', 'info') }}";
-     switch(type){
-         case 'info':
-             toastr.info("{{ Session::get('message') }}");
-             break;
-
-         case 'warning':
-             toastr.warning("{{ Session::get('message') }}");
-             break;
-
-         case 'success':
-             toastr.success("{{ Session::get('message') }}");
-             break;
-
-         case 'error':
-             toastr.error("{{ Session::get('message') }}");
-             break;
-         }
- @endif
- 
-</script>
 <body>
     <div class="container">
         <div class="row">
@@ -255,4 +231,27 @@
 </body>
 
 <script src="{{ asset('js/template.js') }}"></script>
+<script>
+    @if(Session::has('message'))
+     var type = "{{ Session::get('alert-type', 'info') }}";
+     switch(type){
+         case 'info':
+             toastr.info("{{ Session::get('message') }}");
+             break;
+
+         case 'warning':
+             toastr.warning("{{ Session::get('message') }}");
+             break;
+
+         case 'success':
+             toastr.success("{{ Session::get('message') }}");
+             break;
+
+         case 'error':
+             toastr.error("{{ Session::get('message') }}");
+             break;
+         }
+ @endif
+ 
+</script>
 </html>

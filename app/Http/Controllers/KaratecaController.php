@@ -8,6 +8,8 @@ use App\FotoKarateca;
 use App\Categoria;
 use Illuminate\Http\Request;
 use App\Http\Requests\ValidarKaratecaRequest;
+use Illuminate\Support\Facades\Storage;
+use Image;
 
 class KaratecaController extends Controller
 {
@@ -39,12 +41,23 @@ class KaratecaController extends Controller
             'alert-type' => 'success'
         );
 
-        if($foto != null){
+        if($foto !== null){
             FotoKarateca::create([
                 'titulo'=>$foto->getClientOriginalName(),
-                'path'=>$foto->store('public/storeFotos'),
+                'path'=>$foto->store('public/storeFotosKarateca'),
                 'karateca_id'=>$karateca->id_karateca
             ]);
+            
+            $image = Image::make($foto->getRealPath());
+            $image ->resize(800, null, function($constraint){//650x756
+                $constraint->aspectRatio();
+            });
+            $image->orientate();
+
+            $path=$foto->store('public/storeFotosKarateca');
+
+            Storage::put($path, (string) $image->encode('jpg', 30));
+
             return redirect('karatecas')->with($notification);
         }
         return redirect('karatecas')->with($notification);
