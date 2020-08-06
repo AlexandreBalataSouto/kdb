@@ -5,9 +5,38 @@
     <div class="row card-content">
         <div class="row">
             <div class="col s12 m12 l12">
-                <span class="card-title">Calendario de eventos</span>
+                <span class="card-title">
+                    Calendario de eventos
+                    <a href="#modalInfo" class="modal-trigger"><i class="small material-icons">help_outline</i></a>
+                </span>
             </div>
         </div>
+        <!--Modal info-->
+        <div id="modalInfo" class="modal">
+            <div class="modal-content">
+                <div class="col s10 m11 l11">
+                    <h4>{{__('Help')}}</h4>
+                </div>
+                <div class="col s2 m1 l1">
+                    <a href="#" class="closeModal"><i class="material-icons">close</i></a>
+                </div>
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            {{__('Here you can create two type of events, course and competitions. Click on any day and fill the form to create a new event.')}}
+                        </p>
+                        <p>
+                            {{__('Once you created a new event, you can check, edit, add new participants or delete just by click on the event.')}}
+                        </p>
+                        <p>
+                            {{__('Change the day of any event by drag and drop or resize. Example: https://fullcalendar.io/docs/event-dragging-resizing')}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END Modal info-->
 
         <div class="divider"></div>
 
@@ -81,8 +110,9 @@
                         <strong class="errorValidation" id="errorHora"></strong>
                     </div>
                     <div class="input-field col s12 m6 l6">
-                        <input type="text" id="precio" name="precio">
-                        <label for="precio">Precio del evento</label>
+                        <input type="number" id="precio" name="precio" min="0">
+                        <label for="precio">Precio del evento €</label>
+                        <strong class="errorValidation" id="errorPrecio"></strong>
                     </div>
                 </div>
                 <div class="row">
@@ -302,6 +332,7 @@
                         $("#errorStart").text(data.error['evento.start']);
                         $("#errorEnd").text(data.error['evento.end']);
                         $("#errorHora").text(data.error['evento.hora']);
+                        $("#errorPrecio").text(data.error['evento.precio']);
                         $("#errorMonitor").text(data.error['evento.monitor_id']);
                     }
                 }
@@ -333,6 +364,7 @@
                         $("#errorStart").text(data.error['evento.start']);
                         $("#errorEnd").text(data.error['evento.end']);
                         $("#errorHora").text(data.error['evento.hora']);
+                        $("#errorPrecio").text(data.error['evento.precio']);
                         $("#errorMonitor").text(data.error['evento.monitor_id']);
                     }
                     
@@ -382,6 +414,7 @@
             $("#errorStart").text("");
             $("#errorEnd").text("");
             $("#errorHora").text("");
+            $("#errorPrecio").text("");
             $("#errorMonitor").text("");
         }
 

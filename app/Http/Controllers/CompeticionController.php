@@ -25,12 +25,14 @@ class CompeticionController extends Controller
             'evento.start'      =>  'required',
             'evento.end'        =>  'required',
             'evento.hora'       =>  'required',
+            'evento.precio'     =>  'gte:0'
         ],[
             'evento.evento.required'     =>  'Hay que seleccionar un evento',
             'evento.title.required'      =>  'El nombre de la competicion es obligatorio',
             'evento.start.required'      =>  'La fecha de inicio es obligatoria',
             'evento.end.required'        =>  'La fecha final es obligatoria',
-            'evento.hora.required'       =>  'La hora es obligatoria'
+            'evento.hora.required'       =>  'La hora es obligatoria',
+            'evento.precio.gte'          =>  'El precio no puede ser menor que 0',
         ]);
 
         if ($validator->fails()) {

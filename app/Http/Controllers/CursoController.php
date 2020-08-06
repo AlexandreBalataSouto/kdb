@@ -28,6 +28,7 @@ class CursoController extends Controller
             'evento.start'      =>  'required',
             'evento.end'        =>  'required',
             'evento.hora'       =>  'required',
+            'evento.precio'     =>  'gte:0',
             'evento.monitor_id' =>  'required'
         ],[
             'evento.evento.required' =>  'Hay que seleccionar un evento',
@@ -35,6 +36,7 @@ class CursoController extends Controller
             'evento.start.required'      =>  'La fecha de inicio es obligatoria',
             'evento.end.required'        =>  'La fecha final es obligatoria',
             'evento.hora.required'       =>  'La hora es obligatoria',
+            'evento.precio.gte'          =>  'El precio no puede ser menor que 0',
             'evento.monitor_id.required' =>  'El monitor es obligatorio'
         ]);
 

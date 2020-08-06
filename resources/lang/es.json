@@ -60,6 +60,13 @@
     "Add non-attendance": "Añadir falta",
     "Non-attendance": "Falta",
     "Actions": "Acciones",
-    "Selection": "Seleccion"
-
+    "Selection": "Seleccion",
+    "Help":"Ayuda",
+    "Here we have a list of students. Search by name with the input Buscar then press the blue button to check the file of the student. Otherwise you can create a new one just clicking Nuevo Karateca.": "Aquí tenemos un listado de estudiantes. Busque por nombre con el input 'Buscar' y luego presione el botón azul para ver el registro del alumno. De lo contrario puede crear uno nuevo simplemente haciendo click en 'Nuevo Karateca'.",
+    "Here we have a list of instructor. Search by name with the input Buscar then press the blue button to check the file of the instructor. Otherwise you can create a new one just clicking Nuevo Monitor.": "Aquí tenemos un listado de monitores. Busque por nombre con el input 'Buscar' y luego presione el botón azul para ver el registro del monitor. De lo contrario puede crear uno nuevo simplemente haciendo click en 'Nuevo Monitor'.",
+    "Here we can add the absences. Select students and then click add non-attendance. If you want to check the absences click the blue button":"Aquí podemos agregar las faltas de asistencia. Seleccione los alumnos y luego haga clic en 'Añadir falta'. Si quiere comprobar las faltas pulse el boton azul",
+    "Click on the absences if you want to delete it or you can drag and drop on any other day": "Haga click sobre la falta si desea borrarla o puede arrastra y soltar en cualquier otro dia",
+    "Here you can create two type of events, course and competitions. Click on any day and fill the form to create a new event.":"Aquí puede crear dos tipos de eventos, cursos y competiciones. Haga clic en cualquier día y complete el formulario para crear un nuevo evento.",
+    "Once you created a new event, you can check, edit, add new participants or delete just by click on the event.": "Una vez que haya creado un nuevo evento, puede ver, editar, agregar nuevos participantes o eliminar simplemente haciendo clic en el evento.",
+    "Change the day of any event by drag and drop or resize. Example: https://fullcalendar.io/docs/event-dragging-resizing": "Cambie el día de cualquier evento arrastrando y soltando o cambiando el tamaño. Ejemplo: https://fullcalendar.io/docs/event-dragging-resizing "
     }
