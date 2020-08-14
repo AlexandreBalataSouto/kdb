@@ -668,8 +668,6 @@ div.dtr-modal div.dtr-modal-background {
 
 }
 .fc .fc-daygrid-day-top {
-    position: relative;
-    z-index: 4;
     display: flex;
     flex-direction: row-reverse;
   }
@@ -682,6 +680,8 @@ div.dtr-modal div.dtr-modal-background {
 
 }
 .fc .fc-daygrid-day-number {
+    position: relative;
+    z-index: 4;
     padding: 4px;
   }
 .fc {
@@ -756,12 +756,12 @@ div.dtr-modal div.dtr-modal-background {
 
 }
 .fc .fc-daygrid-day-bottom {
-    position: relative;
-    z-index: 4;
     font-size: .85em;
     margin: 2px 3px 0;
   }
 .fc .fc-daygrid-more-link {
+    position: relative;
+    z-index: 4;
     cursor: pointer;
   }
 .fc {
@@ -829,24 +829,28 @@ div.dtr-modal div.dtr-modal-background {
   }
 /* --- the dot style of event --- */
 .fc-daygrid-dot-event {
-  display: block;
-  padding: 2px 0;
-  overflow: hidden
+  display: flex;
+  align-items: center;
+  padding: 2px 0
 
 }
 .fc-daygrid-dot-event .fc-event-title {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0; /* important for allowing to shrink all the way */
+    overflow: hidden;
     font-weight: bold;
-  }
-.fc-daygrid-dot-event .fc-event-time,
-  .fc-daygrid-dot-event .fc-event-title {
-    display: inline-block; /* better than inline, for sitting next to dot */
   }
 .fc-daygrid-dot-event:hover,
   .fc-daygrid-dot-event.fc-event-mirror {
     background: rgba(0, 0, 0, 0.1);
   }
+.fc-daygrid-dot-event.fc-event-selected:before {
+    /* expand hit area */
+    top: -10px;
+    bottom: -10px;
+  }
 .fc-daygrid-event-dot { /* the actual dot */
-  display: inline-block;
   margin: 0 4px;
   box-sizing: content-box;
   width: 0;
@@ -7561,7 +7565,7 @@ textarea.materialize-textarea + label:after {
   transform-origin: 0 0;
 }
 
-.input-field > input[type]:-webkit-autofill:not(.browser-default) + label,
+.input-field > input[type]:-webkit-autofill:not(.browser-default):not([type=search]) + label,
 .input-field > input[type=date]:not(.browser-default) + label,
 .input-field > input[type=time]:not(.browser-default) + label {
   transform: translateY(-14px) scale(0.8);
