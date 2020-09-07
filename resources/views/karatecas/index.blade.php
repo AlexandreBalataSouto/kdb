@@ -5,9 +5,32 @@
     <div class="row card-content">
         <div class="row">
             <div class="col s12 m12 l12">
-                <span class="card-title">Listado de karatecas</span>
+                <span class="card-title">
+                    Listado de karatecas
+                    <a href="#modalInfo" class="modal-trigger"><i class="small material-icons">help_outline</i></a>
+                </span>
             </div>
         </div>
+        <!--Modal info-->
+        <div id="modalInfo" class="modal">
+            <div class="modal-content">
+                <div class="col s10 m11 l11">
+                    <h4>{{__('Help')}}</h4>
+                </div>
+                <div class="col s2 m1 l1">
+                    <a href="#" class="closeModal"><i class="material-icons">close</i></a>
+                </div>
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            {{__('Here we have a list of students. Search by name with the input Buscar then press the blue button to check the file of the student. Otherwise you can create a new one just clicking Nuevo Karateca.')}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END Modal info-->
         <div class="divider"></div>
         <div class="row">
             <div class="input-field col s12 m12 l12">
@@ -134,6 +157,10 @@
             }).fail(function(){
                 toastr.error('ERROR');
             });
+        });
+
+        $(".closeModal").click(function(){ //Cerrar modal al hacer click sobre la X
+            $('.modal').modal('close', modalInfo);
         });
 });
 </script>

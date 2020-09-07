@@ -6,7 +6,9 @@
         <div class="row">
             <div class="col s9 m9 l9">
                 <span class="card-title" data-id="{{$karateca->id_karateca}}">Faltas de {{$karateca->nombre}}
-                    {{$karateca->apellidos}}</span>
+                    {{$karateca->apellidos}}
+                    <a href="#modalInfo" class="modal-trigger"><i class="small material-icons">help_outline</i></a>
+                </span>
             </div>
             <div class="col s3 m3 l3">
                 <a class="btn tooltipped btn-floating btn-medium waves-effect waves-light red floatRight"
@@ -15,6 +17,27 @@
                 </a>
             </div>
         </div>
+
+        <!--Modal info-->
+        <div id="modalInfo" class="modal">
+            <div class="modal-content">
+                <div class="col s10 m11 l11">
+                    <h4>{{__('Help')}}</h4>
+                </div>
+                <div class="col s2 m1 l1">
+                    <a href="#" class="closeModal"><i class="material-icons">close</i></a>
+                </div>
+                <div class="divider"></div>
+                <div class="row">
+                    <div class="col">
+                        <p>
+                            {{__('Click on the absences if you want to delete it or you can drag and drop on any other day')}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--END Modal info-->
 
         <div class="divider"></div>
 

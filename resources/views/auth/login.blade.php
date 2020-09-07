@@ -60,9 +60,13 @@
                             </button>
 
                             @if (Route::has('password.request'))
+
+                            {{--
                             <a class="btn waves-effect waves-light" href="{{ route('password.request') }}">
                                 {{ __('Forgot Your Password?') }}
                             </a>
+                            --}}
+                            
                             @endif
                         </div>
                     </div>
