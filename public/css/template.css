@@ -7141,19 +7141,11 @@ label {
 
 /* Style Placeholders */
 
-::-webkit-input-placeholder {
-  color: #d1d1d1;
-}
-
 ::-moz-placeholder {
   color: #d1d1d1;
 }
 
 :-ms-input-placeholder {
-  color: #d1d1d1;
-}
-
-::-ms-input-placeholder {
   color: #d1d1d1;
 }
 
@@ -10133,22 +10125,12 @@ td {
   text-align: center;
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  /*Para los caracteres de los formularios sean negros*/
-  color: black;
-}
-
 input::-moz-placeholder, textarea::-moz-placeholder {
   /*Para los caracteres de los formularios sean negros*/
   color: black;
 }
 
 input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  /*Para los caracteres de los formularios sean negros*/
-  color: black;
-}
-
-input::-ms-input-placeholder, textarea::-ms-input-placeholder {
   /*Para los caracteres de los formularios sean negros*/
   color: black;
 }

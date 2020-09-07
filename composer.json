@@ -20,6 +20,7 @@
         "laravel/ui": "^2.0",
         "s-ichikawa/laravel-sendgrid-driver": "^3.0",
         "spatie/laravel-backup": "^6.9",
+        "symfony/http-kernel": "^5.1",
         "yajra/laravel-datatables-oracle": "~9.0"
     },
     "require-dev": {
