@@ -16,7 +16,7 @@ class CreateFotoKaratecasTable extends Migration
         Schema::create('fotos_karatecas', function (Blueprint $table) {
             $table->smallIncrements('id_foto_karateca');
             $table->string('titulo',50);
-            $table->string('path',100);
+            $table->string('path',255);
 
             $table->unsignedSmallInteger('karateca_id');
             $table->foreign('karateca_id')->references('id_karateca')->on('karatecas')->onDetele('cascade');

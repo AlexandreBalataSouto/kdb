@@ -3,6 +3,8 @@
 
 // Variables
 @import 'variables';
+@import 'boxGifLoading';
+@import 'footerCopyright';
 
 @import "node_modules/materialize-css/sass/materialize.scss";
 
@@ -15,17 +17,7 @@ a {
     margin-top: 2%;
 }
 .boxGifLoading {
-    position: absolute;
-    top: 0%;
-    bottom: 0%;
-    right: 0%;
-    left: 0%;
-    z-index: 1;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+    @include boxGifLoading;
 }
 .input-field label {
     /*Para los caracteres de los formularios sean negros*/
@@ -58,15 +50,12 @@ strong {
 }
 .title {
     font-size: 84px;
-    color: #26A69A;
+    color: $materialize;
 }
 .m-b-md {
     margin-bottom: 30px;
 }
 .footerCopyright {
-    text-align: center;
-    left: 0%;
-    bottom: 0%;
-    width: 100%;
+    @include footerCopyright;
 }
 // END welcome.blade.php

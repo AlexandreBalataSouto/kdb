@@ -16,7 +16,7 @@ class CreateFotoMonitorsTable extends Migration
         Schema::create('fotos_monitores', function (Blueprint $table) {
             $table->smallIncrements('id_foto_monitor');
             $table->string('titulo',50);
-            $table->string('path',100);
+            $table->string('path',255);
 
             $table->unsignedSmallInteger('monitor_id');
             $table->foreign('monitor_id')->references('id_monitor')->on('monitores');
